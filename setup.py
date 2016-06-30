@@ -78,7 +78,11 @@ setup(
     install_requires=REQUIREMENTS,
 
     name='PyInstaller',
-    version=version,
+    ### DIFFEO MODIFICATION
+    # version=version
+    # version=version+'+diffeo',
+    version='3.1.1+diffeo',
+    ### END DIFFEO MODIFICATION
 
     description='PyInstaller bundles a Python application and all its '
                 'dependencies into a single package.',
@@ -104,6 +108,17 @@ setup(
         'PyInstaller.loader': ['rthooks.dat'],
         },
     include_package_data=True,
+
+    ### DIFFEO MODIFICATION
+    exclude_package_data={
+        'PyInstaller': [
+            'bootloader/Darwin-64bit/*',
+            'bootloader/Linux-32bit/*',
+            'bootloader/Windows-32bit/*',
+            'bootloader/Windows-64bit/*',
+        ],
+    },
+    ### END DIFFEO MODIFICATION
 
     entry_points={
         'console_scripts': [
