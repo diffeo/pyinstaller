@@ -7,6 +7,10 @@ rm -r dist
 python setup.py sdist
 python setup.py check
 # TODO Sign it.
-# Uplad it to PYPI.
+# Upload it to PYPI.
 # Use tool twine for that because it uses encrypted connection.
-twine upload dist/*.tar.gz
+if [ ! -z "$REPOSITORY" ]; then
+    twine upload --repository="$REPOSITORY" dist/*.tar.gz
+else
+    twine upload dist/*.tar.gz
+fi

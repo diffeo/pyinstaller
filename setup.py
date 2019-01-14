@@ -153,7 +153,7 @@ setup(
     ### DIFFEO MODIFICATION
     # version=version
     # version=version+'+diffeo',
-    version='3.1.1+diffeo',
+    version='3.4+diffeo.1',
     ### END DIFFEO MODIFICATION
 
     description='PyInstaller bundles a Python application and all its '
