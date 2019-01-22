@@ -15,6 +15,8 @@ import sys
 import os
 from setuptools import setup
 
+# Workaround for issues with failed installations.
+sys.path.insert(0, '.')
 # Hack required to allow compat to not fail when pypiwin32 isn't found
 os.environ["PYINSTALLER_NO_PYWIN32_FAILURE"] = "1"
 from PyInstaller import __version__ as version, HOMEPATH, PLATFORM
@@ -153,7 +155,7 @@ setup(
     ### DIFFEO MODIFICATION
     # version=version
     # version=version+'+diffeo',
-    version='3.4+diffeo.2',
+    version='3.4+diffeo.3',
     ### END DIFFEO MODIFICATION
 
     description='PyInstaller bundles a Python application and all its '
